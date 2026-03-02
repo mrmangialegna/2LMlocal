@@ -32,7 +32,7 @@ Privacy by design — your data never leaves the company network.
 └──────────┘  └────────────┘  └───────────────┘
 
         ┌─────────────┐
-        │  monitoring │  ← Zabbix namespace
+        │  monitoring │  ← Prometheus + Graphana namespace
         └─────────────┘
 ```
 
