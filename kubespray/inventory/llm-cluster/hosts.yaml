@@ -1,0 +1,30 @@
+all:
+  hosts:
+    control-plane:
+      ansible_host: 192.168.1.100
+ 
+    worker-01:
+      ansible_host: 192.168.1.101
+     
+    worker-02:
+      ansible_host: 192.168.1.102
+      
+    worker-03:
+      ansible_host: 192.168.1.103
+      
+  children:
+    kube_control_plane:
+      hosts: 
+        control-plane: 
+    kube_node:
+      hosts:
+        worker-01: 
+        worker-02: 
+        worker-03: 
+    k8s_cluster:
+      children:
+        kube_control_plane: 
+        kube_node: 
+    etcd:
+      hosts:
+        control-plane:

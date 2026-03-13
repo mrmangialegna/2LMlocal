@@ -1,16 +1,22 @@
 #Authentication
 variable "proxmox_api_url" {
-    description = "Proxmox URL................"
+    description = "Proxmox API URL"
     type = string
 }
 
-variable "pm_api_token_id" {
-    description = "API token ID"
-    type = string
-}
+#variable "pm_api_token_id" {
+#    description = "API token ID"
+#    type = string
+#}
 
 variable "proxmox_api_token" {
     description = "Proxmox API"
+    type = string
+    sensitive = true
+}
+
+variable "ssh_key" {
+    description = "SSH key"
     type = string
     sensitive = true
 }
@@ -28,7 +34,10 @@ variable "nodes" {
         cpu = number
         memory = number
         disk = string
+        datastore_id = string
         role = string
+        template_id = number
+       # datastore_id = string
     }))
 }
 
@@ -36,6 +45,12 @@ variable "template_name" {
     description = "OS template name"
     type = string
     default = "ubuntu-22.04-cloudinit"
+}
+
+variable "vm_user"{
+    description = "VM user"
+    type = string
+    default = "ubuntu"
 }
 
 variable "vm_count" {
