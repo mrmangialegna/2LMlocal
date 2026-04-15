@@ -1,0 +1,1084 @@
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  - destroy
+
+Terraform will perform the following actions:
+
+  # proxmox_virtual_environment_vm.nodes["control-plane"] will be destroyed
+  - resource "proxmox_virtual_environment_vm" "nodes" {
+      - acpi                    = true -> null
+      - bios                    = "seabios" -> null
+      - id                      = "107" -> null
+      - ipv4_addresses          = [] -> null
+      - ipv6_addresses          = [] -> null
+      - keyboard_layout         = "en-us" -> null
+      - mac_addresses           = [
+          - "BC:24:11:48:67:23",
+        ] -> null
+      - migrate                 = false -> null
+      - name                    = "control-plane" -> null
+      - network_interface_names = [] -> null
+      - node_name               = "lab1" -> null
+      - on_boot                 = true -> null
+      - protection              = false -> null
+      - reboot                  = false -> null
+      - scsi_hardware           = "virtio-scsi-pci" -> null
+      - started                 = true -> null
+      - stop_on_destroy         = false -> null
+      - tablet_device           = true -> null
+      - template                = false -> null
+      - timeout_clone           = 1800 -> null
+      - timeout_create          = 1800 -> null
+      - timeout_migrate         = 1800 -> null
+      - timeout_move_disk       = 1800 -> null
+      - timeout_reboot          = 1800 -> null
+      - timeout_shutdown_vm     = 1800 -> null
+      - timeout_start_vm        = 1800 -> null
+      - timeout_stop_vm         = 300 -> null
+      - vm_id                   = 107 -> null
+
+      - clone {
+          - full         = true -> null
+          - node_name    = "lab1" -> null
+          - retries      = 1 -> null
+          - vm_id        = 100 -> null
+            # (1 unchanged attribute hidden)
+        }
+
+      - cpu {
+          - cores        = 4 -> null
+          - hotplugged   = 0 -> null
+          - limit        = 0 -> null
+          - numa         = false -> null
+          - sockets      = 1 -> null
+          - type         = "host" -> null
+          - units        = 1024 -> null
+            # (2 unchanged attributes hidden)
+        }
+
+      - disk {
+          - aio               = "io_uring" -> null
+          - backup            = true -> null
+          - cache             = "none" -> null
+          - datastore_id      = "local-lvm" -> null
+          - discard           = "ignore" -> null
+          - file_format       = "raw" -> null
+          - interface         = "scsi0" -> null
+          - iothread          = false -> null
+          - path_in_datastore = "vm-107-disk-0" -> null
+          - replicate         = true -> null
+          - size              = 20 -> null
+          - ssd               = false -> null
+            # (2 unchanged attributes hidden)
+        }
+
+      - initialization {
+          - datastore_id         = "local-lvm" -> null
+          - interface            = "ide2" -> null
+          - upgrade              = false -> null
+            # (5 unchanged attributes hidden)
+
+          - ip_config {
+              - ipv4 {
+                  - address = "192.168.0.20/24" -> null
+                  - gateway = "192.168.0.1" -> null
+                }
+            }
+
+          - user_account {
+              - keys     = [
+                  - (sensitive value),
+                ] -> null
+              - password = (sensitive value) -> null
+              - username = "ubuntu" -> null
+            }
+        }
+
+      - memory {
+          - dedicated      = 4500 -> null
+          - floating       = 0 -> null
+          - keep_hugepages = false -> null
+          - shared         = 0 -> null
+            # (1 unchanged attribute hidden)
+        }
+
+      - network_device {
+          - bridge       = "vmbr0" -> null
+          - disconnected = false -> null
+          - enabled      = true -> null
+          - firewall     = false -> null
+          - mac_address  = "BC:24:11:48:67:23" -> null
+          - model        = "virtio" -> null
+          - mtu          = 0 -> null
+          - queues       = 0 -> null
+          - rate_limit   = 0 -> null
+          - vlan_id      = 0 -> null
+            # (1 unchanged attribute hidden)
+        }
+
+      - vga {
+          - memory    = 16 -> null
+          - type      = "serial0" -> null
+            # (1 unchanged attribute hidden)
+        }
+    }
+
+  # proxmox_virtual_environment_vm.nodes["worker-01"] will be destroyed
+  - resource "proxmox_virtual_environment_vm" "nodes" {
+      - acpi                    = true -> null
+      - bios                    = "seabios" -> null
+      - id                      = "101" -> null
+      - ipv4_addresses          = [] -> null
+      - ipv6_addresses          = [] -> null
+      - keyboard_layout         = "en-us" -> null
+      - mac_addresses           = [
+          - "BC:24:11:C6:6E:97",
+        ] -> null
+      - migrate                 = false -> null
+      - name                    = "worker-01" -> null
+      - network_interface_names = [] -> null
+      - node_name               = "lab1" -> null
+      - on_boot                 = true -> null
+      - protection              = false -> null
+      - reboot                  = false -> null
+      - scsi_hardware           = "virtio-scsi-pci" -> null
+      - started                 = true -> null
+      - stop_on_destroy         = false -> null
+      - tablet_device           = true -> null
+      - template                = false -> null
+      - timeout_clone           = 1800 -> null
+      - timeout_create          = 1800 -> null
+      - timeout_migrate         = 1800 -> null
+      - timeout_move_disk       = 1800 -> null
+      - timeout_reboot          = 1800 -> null
+      - timeout_shutdown_vm     = 1800 -> null
+      - timeout_start_vm        = 1800 -> null
+      - timeout_stop_vm         = 300 -> null
+      - vm_id                   = 101 -> null
+
+      - clone {
+          - full         = true -> null
+          - node_name    = "lab1" -> null
+          - retries      = 1 -> null
+          - vm_id        = 100 -> null
+            # (1 unchanged attribute hidden)
+        }
+
+      - cpu {
+          - cores        = 4 -> null
+          - hotplugged   = 0 -> null
+          - limit        = 0 -> null
+          - numa         = false -> null
+          - sockets      = 1 -> null
+          - type         = "host" -> null
+          - units        = 1024 -> null
+            # (2 unchanged attributes hidden)
+        }
+
+      - disk {
+          - aio               = "io_uring" -> null
+          - backup            = true -> null
+          - cache             = "none" -> null
+          - datastore_id      = "local-lvm" -> null
+          - discard           = "ignore" -> null
+          - file_format       = "raw" -> null
+          - interface         = "scsi0" -> null
+          - iothread          = false -> null
+          - path_in_datastore = "vm-101-disk-0" -> null
+          - replicate         = true -> null
+          - size              = 20 -> null
+          - ssd               = false -> null
+            # (2 unchanged attributes hidden)
+        }
+
+      - initialization {
+          - datastore_id         = "local-lvm" -> null
+          - interface            = "ide2" -> null
+          - upgrade              = false -> null
+            # (5 unchanged attributes hidden)
+
+          - ip_config {
+              - ipv4 {
+                  - address = "192.168.0.21/24" -> null
+                  - gateway = "192.168.0.1" -> null
+                }
+            }
+
+          - user_account {
+              - keys     = [
+                  - (sensitive value),
+                ] -> null
+              - password = (sensitive value) -> null
+              - username = "ubuntu" -> null
+            }
+        }
+
+      - memory {
+          - dedicated      = 3200 -> null
+          - floating       = 0 -> null
+          - keep_hugepages = false -> null
+          - shared         = 0 -> null
+            # (1 unchanged attribute hidden)
+        }
+
+      - network_device {
+          - bridge       = "vmbr0" -> null
+          - disconnected = false -> null
+          - enabled      = true -> null
+          - firewall     = false -> null
+          - mac_address  = "BC:24:11:C6:6E:97" -> null
+          - model        = "virtio" -> null
+          - mtu          = 0 -> null
+          - queues       = 0 -> null
+          - rate_limit   = 0 -> null
+          - vlan_id      = 0 -> null
+            # (1 unchanged attribute hidden)
+        }
+
+      - vga {
+          - memory    = 16 -> null
+          - type      = "serial0" -> null
+            # (1 unchanged attribute hidden)
+        }
+    }
+
+  # proxmox_virtual_environment_vm.nodes["worker-02"] will be destroyed
+  - resource "proxmox_virtual_environment_vm" "nodes" {
+      - acpi                    = true -> null
+      - bios                    = "seabios" -> null
+      - id                      = "102" -> null
+      - ipv4_addresses          = [] -> null
+      - ipv6_addresses          = [] -> null
+      - keyboard_layout         = "en-us" -> null
+      - mac_addresses           = [
+          - "BC:24:11:AE:AD:DD",
+        ] -> null
+      - migrate                 = false -> null
+      - name                    = "worker-02" -> null
+      - network_interface_names = [] -> null
+      - node_name               = "lab1" -> null
+      - on_boot                 = true -> null
+      - protection              = false -> null
+      - reboot                  = false -> null
+      - scsi_hardware           = "virtio-scsi-pci" -> null
+      - started                 = true -> null
+      - stop_on_destroy         = false -> null
+      - tablet_device           = true -> null
+      - template                = false -> null
+      - timeout_clone           = 1800 -> null
+      - timeout_create          = 1800 -> null
+      - timeout_migrate         = 1800 -> null
+      - timeout_move_disk       = 1800 -> null
+      - timeout_reboot          = 1800 -> null
+      - timeout_shutdown_vm     = 1800 -> null
+      - timeout_start_vm        = 1800 -> null
+      - timeout_stop_vm         = 300 -> null
+      - vm_id                   = 102 -> null
+
+      - clone {
+          - full         = true -> null
+          - node_name    = "lab1" -> null
+          - retries      = 1 -> null
+          - vm_id        = 100 -> null
+            # (1 unchanged attribute hidden)
+        }
+
+      - cpu {
+          - cores        = 4 -> null
+          - hotplugged   = 0 -> null
+          - limit        = 0 -> null
+          - numa         = false -> null
+          - sockets      = 1 -> null
+          - type         = "host" -> null
+          - units        = 1024 -> null
+            # (2 unchanged attributes hidden)
+        }
+
+      - disk {
+          - aio               = "io_uring" -> null
+          - backup            = true -> null
+          - cache             = "none" -> null
+          - datastore_id      = "local-lvm" -> null
+          - discard           = "ignore" -> null
+          - file_format       = "raw" -> null
+          - interface         = "scsi0" -> null
+          - iothread          = false -> null
+          - path_in_datastore = "vm-102-disk-0" -> null
+          - replicate         = true -> null
+          - size              = 20 -> null
+          - ssd               = false -> null
+            # (2 unchanged attributes hidden)
+        }
+
+      - initialization {
+          - datastore_id         = "local-lvm" -> null
+          - interface            = "ide2" -> null
+          - upgrade              = false -> null
+            # (5 unchanged attributes hidden)
+
+          - ip_config {
+              - ipv4 {
+                  - address = "192.168.0.22/24" -> null
+                  - gateway = "192.168.0.1" -> null
+                }
+            }
+
+          - user_account {
+              - keys     = [
+                  - (sensitive value),
+                ] -> null
+              - password = (sensitive value) -> null
+              - username = "ubuntu" -> null
+            }
+        }
+
+      - memory {
+          - dedicated      = 3200 -> null
+          - floating       = 0 -> null
+          - keep_hugepages = false -> null
+          - shared         = 0 -> null
+            # (1 unchanged attribute hidden)
+        }
+
+      - network_device {
+          - bridge       = "vmbr0" -> null
+          - disconnected = false -> null
+          - enabled      = true -> null
+          - firewall     = false -> null
+          - mac_address  = "BC:24:11:AE:AD:DD" -> null
+          - model        = "virtio" -> null
+          - mtu          = 0 -> null
+          - queues       = 0 -> null
+          - rate_limit   = 0 -> null
+          - vlan_id      = 0 -> null
+            # (1 unchanged attribute hidden)
+        }
+
+      - vga {
+          - memory    = 16 -> null
+          - type      = "serial0" -> null
+            # (1 unchanged attribute hidden)
+        }
+    }
+
+  # proxmox_virtual_environment_vm.nodes_2["control-plane-2"] will be destroyed
+  - resource "proxmox_virtual_environment_vm" "nodes_2" {
+      - acpi                    = true -> null
+      - bios                    = "seabios" -> null
+      - id                      = "109" -> null
+      - ipv4_addresses          = [] -> null
+      - ipv6_addresses          = [] -> null
+      - keyboard_layout         = "en-us" -> null
+      - mac_addresses           = [
+          - "BC:24:11:40:3E:AA",
+        ] -> null
+      - migrate                 = false -> null
+      - name                    = "control-plane-2" -> null
+      - network_interface_names = [] -> null
+      - node_name               = "lab2" -> null
+      - on_boot                 = true -> null
+      - protection              = false -> null
+      - reboot                  = false -> null
+      - scsi_hardware           = "virtio-scsi-pci" -> null
+      - started                 = true -> null
+      - stop_on_destroy         = false -> null
+      - tablet_device           = true -> null
+      - template                = false -> null
+      - timeout_clone           = 1800 -> null
+      - timeout_create          = 1800 -> null
+      - timeout_migrate         = 1800 -> null
+      - timeout_move_disk       = 1800 -> null
+      - timeout_reboot          = 1800 -> null
+      - timeout_shutdown_vm     = 1800 -> null
+      - timeout_start_vm        = 1800 -> null
+      - timeout_stop_vm         = 300 -> null
+      - vm_id                   = 109 -> null
+
+      - clone {
+          - full         = true -> null
+          - node_name    = "lab2" -> null
+          - retries      = 1 -> null
+          - vm_id        = 100 -> null
+            # (1 unchanged attribute hidden)
+        }
+
+      - cpu {
+          - cores        = 4 -> null
+          - hotplugged   = 0 -> null
+          - limit        = 0 -> null
+          - numa         = false -> null
+          - sockets      = 1 -> null
+          - type         = "host" -> null
+          - units        = 1024 -> null
+            # (2 unchanged attributes hidden)
+        }
+
+      - disk {
+          - aio               = "io_uring" -> null
+          - backup            = true -> null
+          - cache             = "none" -> null
+          - datastore_id      = "local-lvm" -> null
+          - discard           = "ignore" -> null
+          - file_format       = "raw" -> null
+          - interface         = "scsi0" -> null
+          - iothread          = false -> null
+          - path_in_datastore = "vm-109-disk-0" -> null
+          - replicate         = true -> null
+          - size              = 20 -> null
+          - ssd               = false -> null
+            # (2 unchanged attributes hidden)
+        }
+
+      - initialization {
+          - datastore_id         = "local-lvm" -> null
+          - interface            = "ide2" -> null
+          - upgrade              = false -> null
+            # (5 unchanged attributes hidden)
+
+          - ip_config {
+              - ipv4 {
+                  - address = "192.168.0.30/24" -> null
+                  - gateway = "192.168.0.1" -> null
+                }
+            }
+
+          - user_account {
+              - keys     = [
+                  - (sensitive value),
+                ] -> null
+              - password = (sensitive value) -> null
+              - username = "ubuntu" -> null
+            }
+        }
+
+      - memory {
+          - dedicated      = 4500 -> null
+          - floating       = 0 -> null
+          - keep_hugepages = false -> null
+          - shared         = 0 -> null
+            # (1 unchanged attribute hidden)
+        }
+
+      - network_device {
+          - bridge       = "vmbr0" -> null
+          - disconnected = false -> null
+          - enabled      = true -> null
+          - firewall     = false -> null
+          - mac_address  = "BC:24:11:40:3E:AA" -> null
+          - model        = "virtio" -> null
+          - mtu          = 0 -> null
+          - queues       = 0 -> null
+          - rate_limit   = 0 -> null
+          - vlan_id      = 0 -> null
+            # (1 unchanged attribute hidden)
+        }
+
+      - vga {
+          - memory    = 16 -> null
+          - type      = "serial0" -> null
+            # (1 unchanged attribute hidden)
+        }
+    }
+
+  # proxmox_virtual_environment_vm.nodes_2["worker-03"] will be destroyed
+  - resource "proxmox_virtual_environment_vm" "nodes_2" {
+      - acpi                    = true -> null
+      - bios                    = "seabios" -> null
+      - id                      = "105" -> null
+      - ipv4_addresses          = [] -> null
+      - ipv6_addresses          = [] -> null
+      - keyboard_layout         = "en-us" -> null
+      - mac_addresses           = [
+          - "BC:24:11:89:B2:C5",
+        ] -> null
+      - migrate                 = false -> null
+      - name                    = "worker-03" -> null
+      - network_interface_names = [] -> null
+      - node_name               = "lab2" -> null
+      - on_boot                 = true -> null
+      - protection              = false -> null
+      - reboot                  = false -> null
+      - scsi_hardware           = "virtio-scsi-pci" -> null
+      - started                 = true -> null
+      - stop_on_destroy         = false -> null
+      - tablet_device           = true -> null
+      - template                = false -> null
+      - timeout_clone           = 1800 -> null
+      - timeout_create          = 1800 -> null
+      - timeout_migrate         = 1800 -> null
+      - timeout_move_disk       = 1800 -> null
+      - timeout_reboot          = 1800 -> null
+      - timeout_shutdown_vm     = 1800 -> null
+      - timeout_start_vm        = 1800 -> null
+      - timeout_stop_vm         = 300 -> null
+      - vm_id                   = 105 -> null
+
+      - clone {
+          - full         = true -> null
+          - node_name    = "lab2" -> null
+          - retries      = 1 -> null
+          - vm_id        = 100 -> null
+            # (1 unchanged attribute hidden)
+        }
+
+      - cpu {
+          - cores        = 4 -> null
+          - hotplugged   = 0 -> null
+          - limit        = 0 -> null
+          - numa         = false -> null
+          - sockets      = 1 -> null
+          - type         = "host" -> null
+          - units        = 1024 -> null
+            # (2 unchanged attributes hidden)
+        }
+
+      - disk {
+          - aio               = "io_uring" -> null
+          - backup            = true -> null
+          - cache             = "none" -> null
+          - datastore_id      = "local-lvm" -> null
+          - discard           = "ignore" -> null
+          - file_format       = "raw" -> null
+          - interface         = "scsi0" -> null
+          - iothread          = false -> null
+          - path_in_datastore = "vm-105-disk-0" -> null
+          - replicate         = true -> null
+          - size              = 20 -> null
+          - ssd               = false -> null
+            # (2 unchanged attributes hidden)
+        }
+
+      - initialization {
+          - datastore_id         = "local-lvm" -> null
+          - interface            = "ide2" -> null
+          - upgrade              = false -> null
+            # (5 unchanged attributes hidden)
+
+          - ip_config {
+              - ipv4 {
+                  - address = "192.168.0.31/24" -> null
+                  - gateway = "192.168.0.1" -> null
+                }
+            }
+
+          - user_account {
+              - keys     = [
+                  - (sensitive value),
+                ] -> null
+              - password = (sensitive value) -> null
+              - username = "ubuntu" -> null
+            }
+        }
+
+      - memory {
+          - dedicated      = 3200 -> null
+          - floating       = 0 -> null
+          - keep_hugepages = false -> null
+          - shared         = 0 -> null
+            # (1 unchanged attribute hidden)
+        }
+
+      - network_device {
+          - bridge       = "vmbr0" -> null
+          - disconnected = false -> null
+          - enabled      = true -> null
+          - firewall     = false -> null
+          - mac_address  = "BC:24:11:89:B2:C5" -> null
+          - model        = "virtio" -> null
+          - mtu          = 0 -> null
+          - queues       = 0 -> null
+          - rate_limit   = 0 -> null
+          - vlan_id      = 0 -> null
+            # (1 unchanged attribute hidden)
+        }
+
+      - vga {
+          - memory    = 16 -> null
+          - type      = "serial0" -> null
+            # (1 unchanged attribute hidden)
+        }
+    }
+
+  # proxmox_virtual_environment_vm.nodes_2["worker-04"] will be destroyed
+  - resource "proxmox_virtual_environment_vm" "nodes_2" {
+      - acpi                    = true -> null
+      - bios                    = "seabios" -> null
+      - id                      = "104" -> null
+      - ipv4_addresses          = [] -> null
+      - ipv6_addresses          = [] -> null
+      - keyboard_layout         = "en-us" -> null
+      - mac_addresses           = [
+          - "BC:24:11:2B:5C:A0",
+        ] -> null
+      - migrate                 = false -> null
+      - name                    = "worker-04" -> null
+      - network_interface_names = [] -> null
+      - node_name               = "lab2" -> null
+      - on_boot                 = true -> null
+      - protection              = false -> null
+      - reboot                  = false -> null
+      - scsi_hardware           = "virtio-scsi-pci" -> null
+      - started                 = true -> null
+      - stop_on_destroy         = false -> null
+      - tablet_device           = true -> null
+      - template                = false -> null
+      - timeout_clone           = 1800 -> null
+      - timeout_create          = 1800 -> null
+      - timeout_migrate         = 1800 -> null
+      - timeout_move_disk       = 1800 -> null
+      - timeout_reboot          = 1800 -> null
+      - timeout_shutdown_vm     = 1800 -> null
+      - timeout_start_vm        = 1800 -> null
+      - timeout_stop_vm         = 300 -> null
+      - vm_id                   = 104 -> null
+
+      - clone {
+          - full         = true -> null
+          - node_name    = "lab2" -> null
+          - retries      = 1 -> null
+          - vm_id        = 100 -> null
+            # (1 unchanged attribute hidden)
+        }
+
+      - cpu {
+          - cores        = 4 -> null
+          - hotplugged   = 0 -> null
+          - limit        = 0 -> null
+          - numa         = false -> null
+          - sockets      = 1 -> null
+          - type         = "host" -> null
+          - units        = 1024 -> null
+            # (2 unchanged attributes hidden)
+        }
+
+      - disk {
+          - aio               = "io_uring" -> null
+          - backup            = true -> null
+          - cache             = "none" -> null
+          - datastore_id      = "local-lvm" -> null
+          - discard           = "ignore" -> null
+          - file_format       = "raw" -> null
+          - interface         = "scsi0" -> null
+          - iothread          = false -> null
+          - path_in_datastore = "vm-104-disk-0" -> null
+          - replicate         = true -> null
+          - size              = 20 -> null
+          - ssd               = false -> null
+            # (2 unchanged attributes hidden)
+        }
+
+      - initialization {
+          - datastore_id         = "local-lvm" -> null
+          - interface            = "ide2" -> null
+          - upgrade              = false -> null
+            # (5 unchanged attributes hidden)
+
+          - ip_config {
+              - ipv4 {
+                  - address = "192.168.0.32/24" -> null
+                  - gateway = "192.168.0.1" -> null
+                }
+            }
+
+          - user_account {
+              - keys     = [
+                  - (sensitive value),
+                ] -> null
+              - password = (sensitive value) -> null
+              - username = "ubuntu" -> null
+            }
+        }
+
+      - memory {
+          - dedicated      = 3200 -> null
+          - floating       = 0 -> null
+          - keep_hugepages = false -> null
+          - shared         = 0 -> null
+            # (1 unchanged attribute hidden)
+        }
+
+      - network_device {
+          - bridge       = "vmbr0" -> null
+          - disconnected = false -> null
+          - enabled      = true -> null
+          - firewall     = false -> null
+          - mac_address  = "BC:24:11:2B:5C:A0" -> null
+          - model        = "virtio" -> null
+          - mtu          = 0 -> null
+          - queues       = 0 -> null
+          - rate_limit   = 0 -> null
+          - vlan_id      = 0 -> null
+            # (1 unchanged attribute hidden)
+        }
+
+      - vga {
+          - memory    = 16 -> null
+          - type      = "serial0" -> null
+            # (1 unchanged attribute hidden)
+        }
+    }
+
+  # proxmox_virtual_environment_vm.nodes_2["worker-05"] will be destroyed
+  - resource "proxmox_virtual_environment_vm" "nodes_2" {
+      - acpi                    = true -> null
+      - bios                    = "seabios" -> null
+      - id                      = "108" -> null
+      - ipv4_addresses          = [] -> null
+      - ipv6_addresses          = [] -> null
+      - keyboard_layout         = "en-us" -> null
+      - mac_addresses           = [
+          - "BC:24:11:79:51:87",
+        ] -> null
+      - migrate                 = false -> null
+      - name                    = "worker-05" -> null
+      - network_interface_names = [] -> null
+      - node_name               = "lab2" -> null
+      - on_boot                 = true -> null
+      - protection              = false -> null
+      - reboot                  = false -> null
+      - scsi_hardware           = "virtio-scsi-pci" -> null
+      - started                 = true -> null
+      - stop_on_destroy         = false -> null
+      - tablet_device           = true -> null
+      - template                = false -> null
+      - timeout_clone           = 1800 -> null
+      - timeout_create          = 1800 -> null
+      - timeout_migrate         = 1800 -> null
+      - timeout_move_disk       = 1800 -> null
+      - timeout_reboot          = 1800 -> null
+      - timeout_shutdown_vm     = 1800 -> null
+      - timeout_start_vm        = 1800 -> null
+      - timeout_stop_vm         = 300 -> null
+      - vm_id                   = 108 -> null
+
+      - clone {
+          - full         = true -> null
+          - node_name    = "lab2" -> null
+          - retries      = 1 -> null
+          - vm_id        = 100 -> null
+            # (1 unchanged attribute hidden)
+        }
+
+      - cpu {
+          - cores        = 4 -> null
+          - hotplugged   = 0 -> null
+          - limit        = 0 -> null
+          - numa         = false -> null
+          - sockets      = 1 -> null
+          - type         = "host" -> null
+          - units        = 1024 -> null
+            # (2 unchanged attributes hidden)
+        }
+
+      - disk {
+          - aio               = "io_uring" -> null
+          - backup            = true -> null
+          - cache             = "none" -> null
+          - datastore_id      = "local-lvm" -> null
+          - discard           = "ignore" -> null
+          - file_format       = "raw" -> null
+          - interface         = "scsi0" -> null
+          - iothread          = false -> null
+          - path_in_datastore = "vm-108-disk-0" -> null
+          - replicate         = true -> null
+          - size              = 20 -> null
+          - ssd               = false -> null
+            # (2 unchanged attributes hidden)
+        }
+
+      - initialization {
+          - datastore_id         = "local-lvm" -> null
+          - interface            = "ide2" -> null
+          - upgrade              = false -> null
+            # (5 unchanged attributes hidden)
+
+          - ip_config {
+              - ipv4 {
+                  - address = "192.168.0.33/24" -> null
+                  - gateway = "192.168.0.1" -> null
+                }
+            }
+
+          - user_account {
+              - keys     = [
+                  - (sensitive value),
+                ] -> null
+              - password = (sensitive value) -> null
+              - username = "ubuntu" -> null
+            }
+        }
+
+      - memory {
+          - dedicated      = 3200 -> null
+          - floating       = 0 -> null
+          - keep_hugepages = false -> null
+          - shared         = 0 -> null
+            # (1 unchanged attribute hidden)
+        }
+
+      - network_device {
+          - bridge       = "vmbr0" -> null
+          - disconnected = false -> null
+          - enabled      = true -> null
+          - firewall     = false -> null
+          - mac_address  = "BC:24:11:79:51:87" -> null
+          - model        = "virtio" -> null
+          - mtu          = 0 -> null
+          - queues       = 0 -> null
+          - rate_limit   = 0 -> null
+          - vlan_id      = 0 -> null
+            # (1 unchanged attribute hidden)
+        }
+
+      - vga {
+          - memory    = 16 -> null
+          - type      = "serial0" -> null
+            # (1 unchanged attribute hidden)
+        }
+    }
+
+  # proxmox_virtual_environment_vm.nodes_2["worker-06"] will be destroyed
+  - resource "proxmox_virtual_environment_vm" "nodes_2" {
+      - acpi                    = true -> null
+      - bios                    = "seabios" -> null
+      - id                      = "106" -> null
+      - ipv4_addresses          = [] -> null
+      - ipv6_addresses          = [] -> null
+      - keyboard_layout         = "en-us" -> null
+      - mac_addresses           = [
+          - "BC:24:11:EE:9A:30",
+        ] -> null
+      - migrate                 = false -> null
+      - name                    = "worker-06" -> null
+      - network_interface_names = [] -> null
+      - node_name               = "lab2" -> null
+      - on_boot                 = true -> null
+      - protection              = false -> null
+      - reboot                  = false -> null
+      - scsi_hardware           = "virtio-scsi-pci" -> null
+      - started                 = true -> null
+      - stop_on_destroy         = false -> null
+      - tablet_device           = true -> null
+      - template                = false -> null
+      - timeout_clone           = 1800 -> null
+      - timeout_create          = 1800 -> null
+      - timeout_migrate         = 1800 -> null
+      - timeout_move_disk       = 1800 -> null
+      - timeout_reboot          = 1800 -> null
+      - timeout_shutdown_vm     = 1800 -> null
+      - timeout_start_vm        = 1800 -> null
+      - timeout_stop_vm         = 300 -> null
+      - vm_id                   = 106 -> null
+
+      - clone {
+          - full         = true -> null
+          - node_name    = "lab2" -> null
+          - retries      = 1 -> null
+          - vm_id        = 100 -> null
+            # (1 unchanged attribute hidden)
+        }
+
+      - cpu {
+          - cores        = 4 -> null
+          - hotplugged   = 0 -> null
+          - limit        = 0 -> null
+          - numa         = false -> null
+          - sockets      = 1 -> null
+          - type         = "host" -> null
+          - units        = 1024 -> null
+            # (2 unchanged attributes hidden)
+        }
+
+      - disk {
+          - aio               = "io_uring" -> null
+          - backup            = true -> null
+          - cache             = "none" -> null
+          - datastore_id      = "local-lvm" -> null
+          - discard           = "ignore" -> null
+          - file_format       = "raw" -> null
+          - interface         = "scsi0" -> null
+          - iothread          = false -> null
+          - path_in_datastore = "vm-106-disk-0" -> null
+          - replicate         = true -> null
+          - size              = 20 -> null
+          - ssd               = false -> null
+            # (2 unchanged attributes hidden)
+        }
+
+      - initialization {
+          - datastore_id         = "local-lvm" -> null
+          - interface            = "ide2" -> null
+          - upgrade              = false -> null
+            # (5 unchanged attributes hidden)
+
+          - ip_config {
+              - ipv4 {
+                  - address = "192.168.0.34/24" -> null
+                  - gateway = "192.168.0.1" -> null
+                }
+            }
+
+          - user_account {
+              - keys     = [
+                  - (sensitive value),
+                ] -> null
+              - password = (sensitive value) -> null
+              - username = "ubuntu" -> null
+            }
+        }
+
+      - memory {
+          - dedicated      = 3200 -> null
+          - floating       = 0 -> null
+          - keep_hugepages = false -> null
+          - shared         = 0 -> null
+            # (1 unchanged attribute hidden)
+        }
+
+      - network_device {
+          - bridge       = "vmbr0" -> null
+          - disconnected = false -> null
+          - enabled      = true -> null
+          - firewall     = false -> null
+          - mac_address  = "BC:24:11:EE:9A:30" -> null
+          - model        = "virtio" -> null
+          - mtu          = 0 -> null
+          - queues       = 0 -> null
+          - rate_limit   = 0 -> null
+          - vlan_id      = 0 -> null
+            # (1 unchanged attribute hidden)
+        }
+
+      - vga {
+          - memory    = 16 -> null
+          - type      = "serial0" -> null
+            # (1 unchanged attribute hidden)
+        }
+    }
+
+  # proxmox_virtual_environment_vm.nodes_2["worker-07"] will be destroyed
+  - resource "proxmox_virtual_environment_vm" "nodes_2" {
+      - acpi                    = true -> null
+      - bios                    = "seabios" -> null
+      - id                      = "103" -> null
+      - ipv4_addresses          = [] -> null
+      - ipv6_addresses          = [] -> null
+      - keyboard_layout         = "en-us" -> null
+      - mac_addresses           = [
+          - "BC:24:11:F4:7A:E4",
+        ] -> null
+      - migrate                 = false -> null
+      - name                    = "worker-07" -> null
+      - network_interface_names = [] -> null
+      - node_name               = "lab2" -> null
+      - on_boot                 = true -> null
+      - protection              = false -> null
+      - reboot                  = false -> null
+      - scsi_hardware           = "virtio-scsi-pci" -> null
+      - started                 = true -> null
+      - stop_on_destroy         = false -> null
+      - tablet_device           = true -> null
+      - template                = false -> null
+      - timeout_clone           = 1800 -> null
+      - timeout_create          = 1800 -> null
+      - timeout_migrate         = 1800 -> null
+      - timeout_move_disk       = 1800 -> null
+      - timeout_reboot          = 1800 -> null
+      - timeout_shutdown_vm     = 1800 -> null
+      - timeout_start_vm        = 1800 -> null
+      - timeout_stop_vm         = 300 -> null
+      - vm_id                   = 103 -> null
+
+      - clone {
+          - full         = true -> null
+          - node_name    = "lab2" -> null
+          - retries      = 1 -> null
+          - vm_id        = 100 -> null
+            # (1 unchanged attribute hidden)
+        }
+
+      - cpu {
+          - cores        = 4 -> null
+          - hotplugged   = 0 -> null
+          - limit        = 0 -> null
+          - numa         = false -> null
+          - sockets      = 1 -> null
+          - type         = "host" -> null
+          - units        = 1024 -> null
+            # (2 unchanged attributes hidden)
+        }
+
+      - disk {
+          - aio               = "io_uring" -> null
+          - backup            = true -> null
+          - cache             = "none" -> null
+          - datastore_id      = "local-lvm" -> null
+          - discard           = "ignore" -> null
+          - file_format       = "raw" -> null
+          - interface         = "scsi0" -> null
+          - iothread          = false -> null
+          - path_in_datastore = "vm-103-disk-0" -> null
+          - replicate         = true -> null
+          - size              = 20 -> null
+          - ssd               = false -> null
+            # (2 unchanged attributes hidden)
+        }
+
+      - initialization {
+          - datastore_id         = "local-lvm" -> null
+          - interface            = "ide2" -> null
+          - upgrade              = false -> null
+            # (5 unchanged attributes hidden)
+
+          - ip_config {
+              - ipv4 {
+                  - address = "192.168.0.35/24" -> null
+                  - gateway = "192.168.0.1" -> null
+                }
+            }
+
+          - user_account {
+              - keys     = [
+                  - (sensitive value),
+                ] -> null
+              - password = (sensitive value) -> null
+              - username = "ubuntu" -> null
+            }
+        }
+
+      - memory {
+          - dedicated      = 3200 -> null
+          - floating       = 0 -> null
+          - keep_hugepages = false -> null
+          - shared         = 0 -> null
+            # (1 unchanged attribute hidden)
+        }
+
+      - network_device {
+          - bridge       = "vmbr0" -> null
+          - disconnected = false -> null
+          - enabled      = true -> null
+          - firewall     = false -> null
+          - mac_address  = "BC:24:11:F4:7A:E4" -> null
+          - model        = "virtio" -> null
+          - mtu          = 0 -> null
+          - queues       = 0 -> null
+          - rate_limit   = 0 -> null
+          - vlan_id      = 0 -> null
+            # (1 unchanged attribute hidden)
+        }
+
+      - vga {
+          - memory    = 16 -> null
+          - type      = "serial0" -> null
+            # (1 unchanged attribute hidden)
+        }
+    }
+
+Plan: 0 to add, 0 to change, 9 to destroy.
+
+─────────────────────────────────────────────────────────────────────────────
+
+Note: You didn't use the -out option to save this plan, so Terraform can't
+guarantee to take exactly these actions if you run "terraform apply" now.

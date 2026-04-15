@@ -1,7 +1,6 @@
 proxmox_api_url = "https://192.168.x.x:x/api2/json"
 proxmox_api_token = "root@pam!terraform=<token_secret>"
 node = "..."
-template_name = "ubuntu-22.04-cloudinit"
 network_subnet = "192.x.x.x/x"
 vm_ip_start = x
 gateway_ip = "192.x.x.x"
