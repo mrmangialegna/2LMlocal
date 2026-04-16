@@ -8,8 +8,8 @@ An on-premise AI platform for small and medium businesses that want to run local
 
 ## Project Status
 
-| Component | Status |
-|---|---|
+| Component |
+|---|
 | Terraform — VM provisioning | 
 | Kubespray — Kubernetes install | 
 | Calico — CNI | 
@@ -33,6 +33,12 @@ An on-premise AI platform for small and medium businesses that want to run local
   Intranet Browser
         │
         ▼
+  ┌─────────────┐
+  │   MetalLB   │  ← IP pool 192.168.0.20-40
+  │             │     assegna IP esterno ai servizi
+  └──────┬──────┘
+         │
+         ▼
   ┌───────────┐
   │  Traefik  │  ← IngressController + path-based routing
   └─────┬─────┘

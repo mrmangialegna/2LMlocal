@@ -31,7 +31,7 @@ resource "proxmox_virtual_environment_vm" "nodes" {
     }
     ip_config {
         ipv4 {
-            address = "${cidrhost(var.network_subnet, var.vm_ip_start + index(keys(var.nodes), each.key))}/24"
+            address = "${cidrhost(var.network_subnet, each.value.vm_ip)}/24"
             gateway = var.gateway_ip
         }
     }
@@ -48,12 +48,13 @@ resource "proxmox_virtual_environment_vm" "nodes" {
     }
 }
 
+/*
 
 resource "proxmox_virtual_environment_vm" "nodes_2" {
     provider = proxmox
     for_each = var.nodes_2
     node_name = var.node_2
-    name = "db"
+    name = "registry"
     boot_order = ["scsi0", "net0"]
     cpu {
         cores = each.value.cpu
@@ -103,7 +104,7 @@ resource "proxmox_virtual_environment_vm" "nodes_2" {
         ]
     }
 }
-   
+*/   
 
 
 

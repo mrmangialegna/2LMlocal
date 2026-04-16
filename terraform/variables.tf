@@ -37,6 +37,7 @@ variable "nodes" {
         disk = string
         datastore_id = string
         role = string
+        vm_ip = number
         template_id = number
        # datastore_id = string
     }))

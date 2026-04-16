@@ -7,9 +7,9 @@ all:
 
     control-plane:
       ansible_host: 192.168.0.20 
-    worker-01:
+    llm-worker:
       ansible_host: 192.168.0.21
-    worker-02:
+    registry:
       ansible_host: 192.168.0.22
  
   children:
@@ -19,8 +19,8 @@ all:
         
     kube_node:
       hosts:
-        worker-01: 
-        worker-02: 
+        llm-worker: 
+        registry: 
          
     k8s_cluster:
       children:
